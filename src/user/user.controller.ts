@@ -3,6 +3,7 @@ import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Repository } from 'typeorm';
+import { User } from './entities/user.entity';
 
 @Controller('user')
 export class UserController {
@@ -10,15 +11,10 @@ export class UserController {
 
 
   @Post()
-  async addUser(@Body() userData: { name: string; age: number }): Promise<User> {
-    const newUser = this.userRepository.create(userData);
-    return await this.userRepository.save(newUser);
+  async addUser(@Body() userData: { Username: string; Password: string }){
+    return this.userService.create(userData);
   }
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
-  }
 
   @Get()
   findAll() {
