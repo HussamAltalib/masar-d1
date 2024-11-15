@@ -6,7 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { ArticleModule } from './article/article.module';
-import { TypesModule } from './types/types.module';
+// import { TypesModule } from './types/types.module';
 
 const entitiesPath = __dirname + '/**/*.entity{.ts,.js}';
 
@@ -27,7 +27,7 @@ const entitiesPath = __dirname + '/**/*.entity{.ts,.js}';
     }),
     UserModule,
     ArticleModule,
-    TypesModule,
+    // TypesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

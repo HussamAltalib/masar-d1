@@ -12,5 +12,7 @@ export class User {
     @Column()
     Password: string;
 
+    @Column()
+    test: string;
 
 }

@@ -13,8 +13,8 @@ export const dataSourceOptions: DataSourceOptions = {
   //   autoLoadEntities: true,
   synchronize: true, // todo: not safe for production and we should use migrations instead
   // subscribers: [__dirname + '/domain/subscribers/*.subscriber{.ts,.js}'],
-  migrations: ['src/migration/*{.ts,.js}'],
-	entities: ['src/**/*.entity{.ts,.js}'],
+  migrations: ['src/migrations/*.ts'],
+  entities: ['src/**/*.entity{.ts,.js}'],
 };
 
 const dataSource = new DataSource(dataSourceOptions);
